@@ -14,19 +14,10 @@ class Menu:
 
         tk.Label(self.root, text="PONG GAME", font=("Arial", 20, "bold")).pack(pady=10)
 
-        # Game Mode
-        # tk.Label(self.root, text="Select Mode:", font=("Arial", 12)).pack()
-        # mode_frame = tk.Frame(self.root)
-        # mode_frame.pack()
-
-        # self.mode_var = tk.StringVar(value="single")
-        # tk.Radiobutton(mode_frame, text="Single Player", variable=self.mode_var, value="single").pack(side="left")
-        # tk.Radiobutton(mode_frame, text="Two Player", variable=self.mode_var, value="double").pack(side="left")
-
+        # drop down
         tk.Label(self.root, text="Select Mode:", font=("Arial", 12)).pack(pady=5)
         self.mode_var = tk.StringVar(value="Single_Player")
         tk.OptionMenu(self.root, self.mode_var, "Single_Player", "Double_Player").pack()
-
 
         tk.Label(self.root, text="Select Difficulty:", font=("Arial", 12)).pack(pady=5)
         self.diff_var = tk.StringVar(value="medium")

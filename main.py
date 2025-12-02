@@ -4,6 +4,7 @@ from ball import Ball
 from scoreboard import Scoreboard 
 import time
 from game_menu import Menu
+import random
 
 # screen borders
 Y_EDGE = 480
@@ -82,19 +83,24 @@ while game_on:
         if ball.xcor() > 870:
                 scoreboard.left_point()
                 ball.reset_ball()
+                r_paddle.color("white")
                 continue
         
         if ball.xcor() < -870:
                 scoreboard.right_point()
                 ball.reset_ball()
+                l_paddle.color("white")
                 continue
         
         if 820 < ball.xcor() < 850 and abs(ball.ycor() - r_paddle.ycor()) < 60:
                 ball.bounce_x()
+                r_paddle.color("white", (random.random(), random.random(), random.random()))
 
 
         if -850 < ball.xcor() < -820 and abs(ball.ycor() - l_paddle.ycor()) < 60:
                 ball.bounce_x()
+                l_paddle.color("white", (random.random(), random.random(), random.random()))
+
 
 screen.exitonclick()
 
